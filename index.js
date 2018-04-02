@@ -9030,7 +9030,12 @@ let nonAutomaticIssues = issues.reduce((notARobot, issue) => {
   }
 }, [])
 
-let html = nonAutomaticIssues
-.map(issue => `<tr><td>${issue.body}</td><td>${issue.created_at}</td><td>${issue.state}</td></tr>`)
-.join('')
-$('tbody').append(html)
+const $tbody = document.getElementById('results');
+$tbody.innerHTML = nonAutomaticIssues
+  .map(issue => `<tr>
+    <td>${issue.body}</td>
+    <td>${issue.created_at}</td>
+    <td>${issue.state}</td>
+    </tr>`
+  )
+  .join('');
