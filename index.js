@@ -9033,4 +9033,4 @@ let nonAutomaticIssues = issues.reduce((notARobot, issue) => {
 let html = nonAutomaticIssues
 .map(issue => `<tr><td>${issue.body}</td><td>${issue.created_at}</td><td>${issue.state}</td></tr>`)
 .join('')
-$('table').append(html)
+$('tbody').append(html)
